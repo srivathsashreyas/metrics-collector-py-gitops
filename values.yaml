@@ -1,6 +1,6 @@
 grpc_client:
   replicas: 1
-  image: docker.io/ssrivathsa/grpc-client:grpc-client:2.0.0
+  image: docker.io/ssrivathsa/grpc-client:1.0.0
 
 kafka:
   replicas: 1
@@ -8,11 +8,11 @@ kafka:
 
 processor:
   replicas: 1
-  image: docker.io/ssrivathsa/processor:processor:2.0.0
+  image: docker.io/ssrivathsa/processor:1.0.0
 
 producer:
   replicas: 1
-  image: docker.io/ssrivathsa/producer:producer:2.0.0
+  image: docker.io/ssrivathsa/producer:1.0.0
 
 redis:
   replicas: 1
@@ -20,4 +20,4 @@ redis:
 
 grpc_server:
   replicas: 1
-  image: docker.io/ssrivathsa/grpc-server:grpc-server:2.0.0
+  image: docker.io/ssrivathsa/grpc-server:1.0.0

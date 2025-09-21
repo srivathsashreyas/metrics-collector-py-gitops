@@ -1,0 +1,6 @@
+apiVersion: v2
+name: metrics-collectory-py
+description: A helm chart for deploying the components of the metrics-collector-py (https://github.com/srivathsashreyas/metrics-collector-py) project
+
+type: application
+version: 1.0.0

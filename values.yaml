@@ -1,0 +1,23 @@
+grpc_client:
+  replicas: 1
+  image: docker.io/ssrivathsa/grpc-client:1.0.0
+
+kafka:
+  replicas: 1
+  image: confluentinc/cp-kafka:7.6.0
+
+processor:
+  replicas: 1
+  image: docker.io/ssrivathsa/processor:1.0.0 
+
+producer:
+  replicas: 1
+  image: docker.io/ssrivathsa/producer:1.0.0
+
+redis:
+  replicas: 1
+  image: redis:7.4
+
+grpc_server:
+  replicas: 1
+  image: docker.io/ssrivathsa/grpc-server:1.0.0

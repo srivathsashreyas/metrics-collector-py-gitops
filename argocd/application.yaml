@@ -1,0 +1,31 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: metrics-collector-py-argocd-application
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/srivathsashreyas/metrics-collector-py-gitops.git
+    targetRevision: HEAD
+    # manifest should applied from workspace root
+    # kubectl apply -f argocd/application.yaml
+    path: .
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default # maybe change this later
+  
+  syncPolicy:
+    syncOptions:
+    # create namespace if not exists
+    - CreateNamespace=true 
+    # poll changes in git repo (every 3 mins, default)
+    automated:
+      # if a component(pod, svc etc.) manifest is deleted
+      # from the gitops repo argocd will 
+      # delete it from the cluster 
+      prune: true
+      # if we perform a kubectl apply or any other modification 
+      # directly on the cluster argo cd will overwrite it and sync 
+      # with the gitops repo
+      selfHeal: true 
